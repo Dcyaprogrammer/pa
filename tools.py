@@ -1,6 +1,6 @@
 import requests
-import os
 from tavily import TavilyClient
+from config import TAVILY_API_KEY
 
 
 def get_weather(city: str) -> str:
@@ -25,7 +25,7 @@ def get_weather(city: str) -> str:
 
 def get_attraction(city: str, weather:str) -> str:
 
-    api_key = os.environ.get("TAVILY_API_KEY")
+    api_key = TAVILY_API_KEY
     if not api_key:
         return "Error: TAVILY_API_KEY not found in environment variables"
     
